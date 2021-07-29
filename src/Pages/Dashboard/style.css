@@ -1,0 +1,11 @@
+.Tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.hidde{
+    display: none;
+}

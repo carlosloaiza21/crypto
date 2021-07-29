@@ -1,0 +1,62 @@
+@keyframes instructions {
+	0% { opacity: 0% }
+	25% { opacity: 25% }
+	50%, 72% { opacity: 50%; }
+	75% { opacity: 75%; }
+	100% { opacity: 100%; }
+  }
+.Form-Component{
+    background: white;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	width: 400px;
+    height: 500px;
+}
+.Form-Component > h1{
+	font-family: 'Carter One', cursive;
+	text-align: center;
+	position: relative;
+	animation-duration: 3s;
+  	animation-name: instructions;
+}
+
+.fields-div{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.fields-div form{
+	width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.fields-div .error{
+	background-color: tomato!important;
+}
+
+.fields-div input{
+	margin: 10px;
+	width: 300px;
+	height: 30px;
+	border: solid 1px grey;
+	border-radius: 3px;
+	box-shadow: 2px 2px 2px black;
+	font-family: 'Carter One', cursive;
+	padding: 5px;
+	font-size: 20px;
+}
+.fields-div .Save{
+	margin: 20px;
+	border: solid 1px grey;
+	font-size: 20px;
+	cursor: pointer;
+	width: 80%;
+	height: 40px;
+}
+.fields-div input:focus{
+	border: none;
+	box-shadow: none;
+	background-color: honeydew;
+}

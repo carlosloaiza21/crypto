@@ -1,0 +1,7 @@
+.formPageCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}

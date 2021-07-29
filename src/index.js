@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import WelcomePage from './Pages/WelcomePage';
 import reportWebVitals from './reportWebVitals';
+import STORE from './STORE';
+import { Provider } from 'react-redux';
+
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+import Dashboard from './Pages/Dashboard';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={STORE}>
+    <Router>
+      <Route path="/welcome">
+        <WelcomePage />
+      </Route>
+      <Route path="/dashboard">
+        <Dashboard />
+      </Route>
+    </Router>
+    </Provider>,
   document.getElementById('root')
 );
 
