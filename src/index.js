@@ -15,7 +15,7 @@ import Dashboard from './Pages/Dashboard';
 ReactDOM.render(
     <Provider store={STORE}>
     <Router>
-      <Route path="/welcome">
+      <Route path="/">
         <WelcomePage />
       </Route>
       <Route path="/dashboard">

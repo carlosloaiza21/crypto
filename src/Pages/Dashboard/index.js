@@ -40,10 +40,10 @@ const Dashboard=()=>{
     return(
         <div>
             <Header
-                name={"carlos"/*user.userName*/}
-                lastName={'Loaiza'/*user.userLast*/}
-                email={'cloaiza@dd.com'/*user.email*/}
-                phone={'55555'/*user.phone*/}
+                name={user.userName}
+                lastName={user.userLast}
+                email={user.email}
+                phone={user.phone}
             />
             <button onClick={()=>show('BTC','ETH','XRP')}>BTC</button>
             <button onClick={()=>show('ETH','BTC','XRP')}>ETH</button>
