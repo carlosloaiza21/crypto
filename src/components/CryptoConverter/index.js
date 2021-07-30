@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
 
-const CryptoConverter =({price1,price2,price3})=>{
+const CryptoConverter =({price1=0,price2=0,price3=0})=>{
 
-    const [btc1,setBtc1]=useState();
-    const [btc2,setBtc2]=useState();
-    const [btc3,setBtc3]=useState();
+    const [btc1,setBtc1]=useState(0);
+    const [btc2,setBtc2]=useState(0);
+    const [btc3,setBtc3]=useState(0);
 
-    const [value, setValue]=useState()
+    const [value, setValue]=useState(0)
 
 
     useEffect(() => {
         setBtc1(value*price1);
         setBtc2(value*price2);
         setBtc3(value*price3)
-    }, [value])
+    }, [value,price1,price2,price3])
 
     return(<div className="criptoConverter">
         <div className="row">

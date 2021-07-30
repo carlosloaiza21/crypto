@@ -23,7 +23,7 @@ const Dashboard=()=>{
             clearTimeout(id)
         }
         
-    }, [cryptoCompare])
+    }, [cryptoCompare, dispatch])
 
     const show=(tab,tab1,tab2)=>{
 
@@ -32,19 +32,14 @@ const Dashboard=()=>{
         document.getElementById(tab2).classList.add('hidde')
     }
 
-    const calculate=(ev)=>{
-        console.log(Number(ev.target.value*19.88))
-    }
-
-
     return(
         <div>
-            <Header
-                name={user.userName}
-                lastName={user.userLast}
-                email={user.email}
-                phone={user.phone}
-            />
+           <Header
+name={user.userName}
+lastName={user.userLast}
+email={user.email}
+phone={user.phone}
+/>
             <button onClick={()=>show('BTC','ETH','XRP')}>BTC</button>
             <button onClick={()=>show('ETH','BTC','XRP')}>ETH</button>
             <button onClick={()=>show('XRP','ETH','BTC')}>XRP</button>
@@ -64,11 +59,21 @@ const Dashboard=()=>{
                     <Card provider="Cryptocompare ETH" data={cryptoCompare.cryptoCompare_ETH_USDT} dolarValue="19.80" />
                     <Card provider="Stormgain ETH" data={cryptoCompare.stormgain_ETH_USDT}/>
                     <Card provider="Coingecko ETH" data={cryptoCompare.coingecko_ETH}/>
+                    <CryptoConverter
+                        price1={cryptoCompare.cryptoCompare_ETH_USDT[cryptoCompare.cryptoCompare_ETH_USDT.length-1]}
+                        price2={cryptoCompare.stormgain_ETH_USDT[cryptoCompare.stormgain_ETH_USDT.length-1]}
+                        price3={cryptoCompare.coingecko_ETH[cryptoCompare.coingecko_ETH.length-1]}
+                    />
                 </div>
                 <div className="Tab hidde" id="XRP">
                     <Card provider="Cryptocompare XRP" data={cryptoCompare.cryptoCompare_XRP_USDT} dolarValue="19.80" />
                     <Card provider="Stormgain XRP" data={cryptoCompare.stormgain_XRP_USDT}/>
                     <Card provider="Coingecko XRP" data={cryptoCompare.coingecko_XRP}/>
+                    <CryptoConverter
+                        price1={cryptoCompare.cryptoCompare_XRP_USDT[cryptoCompare.cryptoCompare_XRP_USDT.length-1]}
+                        price2={cryptoCompare.stormgain_XRP_USDT[cryptoCompare.stormgain_XRP_USDT.length-1]}
+                        price3={cryptoCompare.coingecko_XRP[cryptoCompare.coingecko_XRP.length-1]}
+                    />
                 </div>
             </div>
         </div>

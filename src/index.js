@@ -9,19 +9,24 @@ import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
   Route,
+  Switch
 } from "react-router-dom";
 import Dashboard from './Pages/Dashboard';
 
 ReactDOM.render(
     <Provider store={STORE}>
+    
     <Router>
-      <Route path="/">
+    <Switch>
+      <Route exact path="/">
         <WelcomePage />
       </Route>
-      <Route path="/dashboard">
+      <Route exact path="/dashboard">
         <Dashboard />
       </Route>
+      </Switch>
     </Router>
+    
     </Provider>,
   document.getElementById('root')
 );
