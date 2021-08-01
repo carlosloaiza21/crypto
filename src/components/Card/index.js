@@ -7,12 +7,12 @@ const Card = ({provider,data}) =>{
     return(
         <div className="cardContent">
             <h1>{data?data[data.length-1]:''}</h1>
-            <h3>{provider}</h3>
+            <h3 data-testid="provider">{provider}</h3>
             <hr/>
             <div className="rowsContent">
                 {
                     data?
-                    data.map((item,index)=>{
+                    data.map((item)=>{
                       return (
                           <div key={Math.random()} className="row">
                             <div>{item}</div>   

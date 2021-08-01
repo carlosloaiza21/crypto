@@ -57,12 +57,46 @@ const Form=({onSubmit, title, instructions})=>{
                     {instructions}   
                 </p>
                 <div className="fields-div">
-                    <form ref={formRef} onSubmit={submit}>
-                    <input required pattern="^[a-zA-Z]+$" onChange={(ev)=>validate(ev,'text')} placeholder="Name" type="text" name="name" />
-                    <input required pattern="^[a-zA-Z]+$" onChange={(ev)=>validate(ev,'text')} placeholder="Last Name" type="text" name="lastName" />
-                    <input required pattern="^[a-zA-Z0-9]+@{1}[a-zA-Z]+\.{1}[a-zA-Z]{3}$" onChange={(ev)=>validate(ev,'email')} placeholder="Email" type="text" name="email" />
-                    <input required onChange={(ev)=>validate(ev,'number')} placeholder="Phone" type="text" name="phone" />
-                    <input className="Save" value="Save" type="submit"/>
+                    <form ref={formRef} onSubmit={submit} data-testid="form">
+                    <input 
+                        required
+                        pattern="^[a-zA-Z]+$"
+                        onChange={(ev)=>validate(ev,'text')}
+                        placeholder="Name"
+                        type="text"
+                        name="name"
+                        data-testid="name"
+                    />
+                    <input
+                        required
+                        pattern="^[a-zA-Z]+$"
+                        onChange={(ev)=>validate(ev,'text')}
+                        placeholder="Last Name"
+                        type="text" name="lastName"
+                        data-testid="lastName"
+                    />
+                    <input
+                        required
+                        pattern="^[a-zA-Z0-9]+@{1}[a-zA-Z]+\.{1}[a-zA-Z]{3}$"
+                        onChange={(ev)=>validate(ev,'email')}
+                        placeholder="Email"
+                        type="text" name="email"
+                        data-testid="email"
+                    />
+                    <input
+                        required
+                        onChange={(ev)=>validate(ev,'number')}
+                        placeholder="Phone"
+                        type="text"
+                        name="phone"
+                        data-testid="phone"
+                    />
+                    <input
+                        data-testid="save"
+                        className="Save"
+                        value="Save"
+                        type="submit"
+                    />
                     </form>
                 </div>
             </div>

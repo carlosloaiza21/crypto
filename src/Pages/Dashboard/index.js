@@ -35,11 +35,11 @@ const Dashboard=()=>{
     return(
         <div>
            <Header
-name={user.userName}
-lastName={user.userLast}
-email={user.email}
-phone={user.phone}
-/>
+                name={user.userName}
+                lastName={user.userLast}
+                email={user.email}
+                phone={user.phone}
+            />
             <button onClick={()=>show('BTC','ETH','XRP')}>BTC</button>
             <button onClick={()=>show('ETH','BTC','XRP')}>ETH</button>
             <button onClick={()=>show('XRP','ETH','BTC')}>XRP</button>
